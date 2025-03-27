@@ -1,8 +1,8 @@
 package com.example.rest.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.math.BigDecimal;
 
 @Setter
@@ -11,20 +11,21 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "Producto")
+@Table(name = "product")
 public class Product {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    @Column(name = "Nombre")
-    private String name;
+  @Column(name = "name")
+  private String name;
 
-    @Column(name = "Precio")
-    private BigDecimal price;
+  @Column(name = "price")
+  private BigDecimal price;
 
-    @ManyToOne
-    @JoinColumn(name = "id_fabricante", nullable = false)
-    private Maker maker;
+  @ManyToOne
+  @JoinColumn(name = "id_maker", nullable = false)
+  @JsonIgnore
+  private Maker maker;
 }

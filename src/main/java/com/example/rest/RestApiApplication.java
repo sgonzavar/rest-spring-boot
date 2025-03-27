@@ -10,5 +10,4 @@ public class RestApiApplication {
         EnvLoader.load();
         SpringApplication.run(RestApiApplication.class, args);
     }
-
 }

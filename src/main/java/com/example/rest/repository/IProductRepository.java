@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Repository
-public interface ProductRepository extends CrudRepository<Product, Long> {
+public interface IProductRepository extends CrudRepository<Product, Long> {
     // sentencia que usa la notacion query
     @Query("SELECT p FROM Product p WHERE p.price BETWEEN ?1 AND ?2")
     List<Product> findProductByPriceInRange(BigDecimal minPrice, BigDecimal maxPrice);

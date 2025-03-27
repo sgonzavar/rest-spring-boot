@@ -2,7 +2,7 @@ package com.example.rest.dao.implement;
 
 import com.example.rest.dao.IMakerDAO;
 import com.example.rest.entities.Maker;
-import com.example.rest.repository.MakerRepository;
+import com.example.rest.repository.IMakerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -13,26 +13,26 @@ import java.util.Optional;
 public class MakerImplementDAO implements IMakerDAO {
 
     @Autowired
-    private MakerRepository makerRepository;
+    private IMakerRepository IMakerRepository;
 
 
     @Override
     public List<Maker> findAll() {
-        return (List<Maker>) makerRepository.findAll();
+        return (List<Maker>) IMakerRepository.findAll();
     }
 
     @Override
     public Optional<Maker> findById(Long id) {
-        return makerRepository.findById(id);
+        return IMakerRepository.findById(id);
     }
 
     @Override
     public void save(Maker maker) {
-        makerRepository.save(maker);
+        IMakerRepository.save(maker);
     }
 
     @Override
     public void deleteById(Long id) {
-        makerRepository.deleteById(id);
+        IMakerRepository.deleteById(id);
     }
 }

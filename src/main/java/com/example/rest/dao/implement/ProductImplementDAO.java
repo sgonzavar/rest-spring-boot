@@ -2,7 +2,7 @@ package com.example.rest.dao.implement;
 
 import com.example.rest.dao.IProductDAO;
 import com.example.rest.entities.Product;
-import com.example.rest.repository.ProductRepository;
+import com.example.rest.repository.IProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,30 +14,30 @@ import java.util.Optional;
 public class ProductImplementDAO implements IProductDAO {
 
     @Autowired
-    private ProductRepository productRepository;
+    private IProductRepository IProductRepository;
 
     @Override
     public List<Product> findAll() {
-        return (List<Product>) productRepository.findAll();
+        return (List<Product>) IProductRepository.findAll();
     }
 
     @Override
     public Optional<Product> findById(Long id) {
-        return productRepository.findById(id);
+        return IProductRepository.findById(id);
     }
 
     @Override
     public void save(Product product) {
-        productRepository.save(product);
+        IProductRepository.save(product);
     }
 
     @Override
     public void deleteById(Long id) {
-        productRepository.deleteById(id);
+        IProductRepository.deleteById(id);
     }
 
     @Override
     public List<Product> findByPriceRange(BigDecimal minPrice, BigDecimal maxPrice) {
-        return productRepository.findProductByPriceInRange(minPrice, maxPrice);
+        return IProductRepository.findProductByPriceInRange(minPrice, maxPrice);
     }
 }

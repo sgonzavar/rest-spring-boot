@@ -1,4 +1,4 @@
-package com.example.rest.controller.dto;
+package com.example.rest.dto;
 
 import com.example.rest.entities.Product;
 import lombok.AllArgsConstructor;
@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class MakerDTO {
-    private Long id;
-    private String name;
-    private List<Product> productList = new ArrayList<>();
+  private Long id;
+  private String name;
+  private List<Product> productList = new ArrayList<>();
 }
